@@ -1,6 +1,8 @@
 streamlit==1.30.0
 altair==5.0.1
 pandas==2.2.0
-numpy==1.26.0
+# Use a NumPy 1.25.x wheel to avoid building from source on Streamlit Cloud
+# (1.26.0 may require system BLAS/CMake/Fortran and fail to build in the cloud).
+numpy==1.25.4
 # Removed scipy==1.11.0 because Streamlit Community Cloud lacks Fortran/compiler for building SciPy from source.
 # If you need SciPy, consider deploying via Docker or choosing a Python/runtime that has prebuilt wheels.
